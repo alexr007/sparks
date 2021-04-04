@@ -1,7 +1,8 @@
 Global / onChangedBuildSource := ReloadOnSourceChanges
 
-name   := "sparks"
-version:= "0.0.1"
+name               := "sparks"
+version            := "0.0.1"
+crossScalaVersions := Nil
 
 scalacOptions ++= Seq(
   "-encoding", "UTF-8",
@@ -49,9 +50,6 @@ lazy val spark311s212 = (project in file("spark311s212"))
   .dependsOn(common)
 
 lazy val whole = (project in file("."))
-  .settings(
-    crossScalaVersions := Nil
-  )
   .aggregate(
     common,
     spark230s211,
